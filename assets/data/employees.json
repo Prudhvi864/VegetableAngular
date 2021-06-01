@@ -1,0 +1,31 @@
+[
+    {
+        "feedbackId":18,
+        "customerId":{
+            "customerId":128,
+            "name":"jai"        },
+        "vegetableId":68,
+        "rating":5,
+        "comments":"very good"
+    },
+    {
+        "feedbackId":19,
+        "customerId":{
+            "customerId":129,
+            "name":"ram"
+        },
+        "vegetableId":728,
+        "rating":3,
+        "comments":"very bad"
+    },
+    {
+        "feedbackId":11,
+        "customerId":{
+            "customerId":122,
+            "name":"Raj"
+        },
+        "vegetableId":68,
+        "rating":1,
+        "comments":"poor"
+    }
+]
