@@ -1,0 +1,140 @@
+<div class="container">
+    <h3>Feedback Form</h3>
+</div>
+<form [formGroup]="vegetableForm" (ngSubmit)="addFeedback()">
+    <div class="form-group">
+        <div *ngIf="vegetableForm.controls.feedbackId.errors && 
+        (vegetableForm.controls.feedbackId.touched || vegetableForm.controls.feedbackId.dirty)">
+            Feedback Id is required
+        </div>
+        <label for="feedbackId">Feedback Id</label>
+        <input class="form-control" type="text" name="feedbackId" id="feedbackId" formControlName="feedbackId">
+    </div>
+    <div class="form-group">
+        <div *ngIf="vegetableForm.controls.feedbackId.errors && 
+        (vegetableForm.controls.feedbackId.touched || vegetableForm.controls.feedbackId.dirty)">
+            Customer Id is required
+        </div>
+        <label for="customerId">customer id</label>
+        <input class="form-control" type="text" name="customerId" id="customerId" formControlName="customerId">
+    </div>
+    
+    <div class="form-group">
+        <div *ngIf="vegetableForm.controls.feedbackId.errors && 
+        (vegetableForm.controls.feedbackId.touched || vegetableForm.controls.feedbackId.dirty)">
+            vegetable Id is required
+        </div>
+        <label for="vegetableId">vegetableId</label>
+        <input class="form-control" type="text" name="vegetableId" id="vegetableId" formControlName="vegetableId">
+    </div>
+    <div class="form-group">
+        <div *ngIf="vegetableForm.controls.feedbackId.errors && 
+        (vegetableForm.controls.feedbackId.touched || vegetableForm.controls.feedbackId.dirty)">
+            rating is required
+        </div>
+        <label for="rating">Rating</label>
+        <input class="form-control" type="text" name="rating" id="rating" formControlName="rating">
+    </div>
+    <div class="form-group">
+        <div *ngIf="vegetableForm.controls.feedbackId.errors && 
+        (vegetableForm.controls.feedbackId.touched || vegetableForm.controls.feedbackId.dirty)">
+            Comments are required
+        </div>
+        <label for="comments">Comments</label>
+        <input class="form-control" type="text" name="comments" id="comments" formControlName="comments">
+    </div>
+    <input type="submit" value="Add feedback" class="btn btn-primary">
+</form>
+<br>
+<form [formGroup]="vegetableForm" (ngSubmit)="getFeedbacks()">
+    <input type="submit" value="Feedbacks" class="btn btn-primary">
+</form>
+<br>
+<form [formGroup]="customersearchForm" (ngSubmit)="findCID()">
+    Enter customer id to view details:
+    <input type="text" name ="searchId" id="searchId" formControlName="searchId"/>
+    <button class="btn btn-primary search" >Search</button>
+    <!--<input type="submit" value="search" class="btn btn-primary" />-->
+</form>
+<br>
+<form [formGroup]="vegetablesearchForm" (ngSubmit)="findVID()">
+    Enter vegetable id to view details:
+    <input type="text" name ="searchId" id="searchId" formControlName="searchId"/>
+    <button class="btn btn-primary search" >Search</button>
+    <!--<input type="submit" value="search" class="btn btn-primary" />-->
+</form>
+<br>
+<form [formGroup]="ratingForm" (ngSubmit)="getRatings()">
+    Enter rating to view details:    
+    <input type="text" name ="searchId" id="searchId" formControlName="searchId"/>
+    <button class="btn btn-primary search" >Search</button>
+    <!--<input type="submit" value="search" class="btn btn-primary" />-->
+</form>
+
+<table class="table table-bordered">
+    <tr *ngIf="vegetables.length > 0">
+        <th>feedback Id</th>
+        <th>customer Id</th>
+        <th>vegetable Id</th>
+        <th>Rating</th>
+        <th>Comments</th>
+    </tr>
+    <tr *ngFor="let veg of vegetables">
+        <td>{{veg.feedbackId}}</td>
+        <td>{{veg.customerId}}</td>
+        <td>{{veg.vegetableId}}</td>
+        <td>{{veg.rating}}</td>
+        <td>{{veg.comments}}</td>
+    </tr>
+</table>
+<br>
+<table class="table table-bordered" *ngIf="feeds1">
+    <tr>
+        <th>feedback Id</th>
+        <th>customer Id</th>
+        <th>vegetable Id</th>
+        <th>Rating</th>
+        <th>Comments</th>
+    </tr>
+    <tr *ngFor="let feed1 of feeds1">
+        <td>{{feed1.feedbackId}}</td>
+        <td>{{feed1.customerId}}</td>
+        <td>{{feed1.vegetableId}}</td>
+        <td>{{feed1.rating}}</td>
+        <td>{{feed1.comments}}</td>
+    </tr>
+</table>
+<br>
+<table class="table table-bordered" *ngIf="feeds2">
+    <tr>
+        <th>feedback Id</th>
+        <th>customer Id</th>
+        <th>vegetable Id</th>
+        <th>Rating</th>
+        <th>Comments</th>
+    </tr>
+    <tr *ngFor="let feed2 of feeds2">
+        <td>{{feed2.feedbackId}}</td>
+        <td>{{feed2.customerId}}</td>
+        <td>{{feed2.vegetableId}}</td>
+        <td>{{feed2.rating}}</td>
+        <td>{{feed2.comments}}</td>
+    </tr>
+</table>
+<br>
+<table class="table table-bordered" *ngIf="ratings">
+    <tr>
+        <th>feedback Id</th>
+        <th>customer Id</th>
+        <th>vegetable Id</th>
+        <th>Rating</th>
+        <th>Comments</th>
+    </tr>
+    <tr *ngFor="let rate of ratings">
+        <td>{{rate.feedbackId}}</td>
+        <td>{{rate.customerId}}</td>
+        <td>{{rate.vegetableId}}</td>
+        <td>{{rate.rating}}</td>
+        <td>{{rate.comments}}</td>
+    </tr>
+</table>

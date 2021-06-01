@@ -1,0 +1,44 @@
+<div class="alert alert-primary">
+    <h3>vegetable Form</h3>
+</div>
+<form [formGroup]="vegetableForm" (ngSubmit)="showFeedback()">
+    <div class="form-group">
+        <label for="feedbackId">Feedback Id</label>
+        <input class="form-control" type="text" name="feedbackId" id="feedbackId" formControlName="feedbackId">
+    </div>
+    <div class="form-group">
+        <label for="customerId">customer id</label>
+        <input class="form-control" type="text" name="customerId" id="customerId" formControlName="customerId">
+    </div>
+    <div class="form-group">
+
+        <label for="vegetableId">vegetableId</label>
+        <input class="form-control" type="text" name="vegetableId" id="vegetableId" formControlName="vegetableId">
+    </div>
+    <div class="form-group">
+        <label for="rating">Rating</label>
+        <input class="form-control" type="text" name="rating" id="rating" formControlName="rating">
+    </div>
+    <div class="form-group">
+        <label for="comments">Comments</label>
+        <input class="form-control" type="text" name="comments" id="comments" formControlName="comments">
+    </div>
+    <input type="submit" value="Add feedback" class="btn btn-primary" >
+</form>
+<hr>
+<table class="table table-bordered">
+    <tr *ngIf="vegetables.length > 0">
+        <th>feedback Id</th>
+        <th>customer Id</th>
+        <th>vegetable Id</th>
+        <th>Rating</th>
+        <th>Comments</th>
+    </tr>
+    <tr *ngFor="let veg of vegetables">
+        <td>{{veg.feedbackId}}</td>
+        <td>{{veg.customerId}}</td>
+        <td>{{veg.vegetableId}}</td>
+        <td>{{veg.rating}}</td>
+        <td>{{veg.comments}}</td>
+    </tr>
+</table>
